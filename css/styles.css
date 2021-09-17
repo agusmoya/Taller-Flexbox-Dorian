@@ -1,0 +1,105 @@
+/** 
+**  FLEXBOX:
+**  Nos permite crear contenedores flexibles, pero hay requisitos mínimos:
+**  SIEMPRE hace falta un contenedor, y son los hijos quienes serán flexibles.
+**  
+**  Por defecto el flujo de los hijos (flex-direction: row) será horizontal (main axis)
+**  Ahora el MAIN AXIS es vertical:
+**  flex-direction: column; 
+**  
+**  RECORDAR: para centrar verticalmente hay que colocar medida de heigth!!
+**  
+**  
+** **/
+
+body {
+    background-color: #333;
+    color: aliceblue;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/** PROPIEDADES DEL PADRE **/
+.container {
+    background-color: rgb(199, 83, 199);
+    height: 300px;
+    display: flex;
+    /** DEFAULT **/
+    flex-direction: row;
+
+    /** DEFAULT **/
+    /* flex-wrap: nowrap; */
+    /** permite que las cajas hijas salten de línea cuando achicamos pantalla **/
+    flex-wrap: wrap;
+
+    /** justify-content --> para el MAIN AXIS (con flex-direction row) **/
+    /** DEFAULT **/
+    /* justify-content: start; */
+    /** centrado en el main axis **/
+    /* justify-content: center; */
+    /** al final del main axis **/
+    /* justify-content: flex-end; */
+    /** space-between **/
+    /* justify-content: space-between; */
+    /** space-around **/
+    /* justify-content: space-around; */
+    /** space-evenly **/
+    /* justify-content: space-evenly; */
+
+    /** align-items --> para el CROSS AXIS (con flex-direction row) **/
+    /** mismas props que arriba **/
+    /** DEFAULT **/
+    /* align-items: start; */
+    /* align-items: center; */
+    /** align-content --> permite organizar las filas de las cajas hijas
+    **  una vez que rompen línea. Gestionamos el CROSS AXIS.
+    **  Es decir, que si no está  -flex-wrap: wrap-, esta prop no tendría sentido
+    **  
+    **  **/
+
+    /** DEFAULT **/
+    /* en este caso ocupan todo lo que pueden, con la limitación del heigth 
+    de la clase .box*/
+    align-content: stretch;
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    /* align-content: start; */
+    /* align-content: end; */
+    /* align-content: center; */
+
+}
+
+/** PROPIEDADES DE LOS HIJOS: **/
+/* box -> FLEX ITEMS */
+.box {
+    width: 100px;
+    height: 100px;
+}
+
+.box-1 {
+    background-color: rosybrown;
+    order: 5;
+}
+
+.box-2 {
+    background-color: royalblue;
+}
+
+.box-3 {
+    background-color: lightsalmon;
+}
+
+.box-4 {
+    background-color: lime;
+}
+
+.box-5 {
+    background-color: brown;
+}
+
+.box-6 {
+    background-color: grey;
+}
