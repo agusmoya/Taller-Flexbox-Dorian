@@ -54,6 +54,7 @@ img {
     /** DEFAULT **/
     /* align-items: start; */
     /* align-items: center; */
+
     /** align-content --> permite organizar las filas de las cajas hijas
     **  una vez que rompen línea. Gestionamos el CROSS AXIS.
     **  Es decir, que si no está  -flex-wrap: wrap-, esta prop no tendría sentido
@@ -77,19 +78,24 @@ img {
 .box {
     width: 100px;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .box-1 {
     background-color: rosybrown;
-    order: 5;
+    order: 3;
 }
 
 .box-2 {
     background-color: royalblue;
+    order: 2;
 }
 
 .box-3 {
     background-color: lightsalmon;
+    order: 1;
 }
 
 .box-4 {
@@ -102,4 +108,15 @@ img {
 
 .box-6 {
     background-color: grey;
+}
+
+.box:first-child {
+    /* vemos que el -order- no afecta a :first-child, 
+    se fija el orden del html. El -order- afecta SOLO visualmente */
+    background-color: red;
+}
+
+.box:nth-child(2) {
+    /* background-color: aquamarine; */
+    align-self: flex-end;
 }
