@@ -77,15 +77,18 @@ img {
 /* box -> FLEX ITEMS */
 .box {
     width: 100px;
+    /* OJO QUE ESTE HEIGTH LIMITA EL STRETCH!!!! */
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 3rem;
 }
 
 .box-1 {
     background-color: rosybrown;
     order: 3;
+    align-self: flex-end;
 }
 
 .box-2 {
@@ -96,9 +99,10 @@ img {
 .box-3 {
     background-color: lightsalmon;
     order: 1;
+    align-self: flex-end;
 }
 
-.box-4 {
+/* .box-4 {
     background-color: lime;
 }
 
@@ -108,15 +112,30 @@ img {
 
 .box-6 {
     background-color: grey;
-}
+} */
 
 .box:first-child {
     /* vemos que el -order- no afecta a :first-child, 
     se fija el orden del html. El -order- afecta SOLO visualmente */
-    background-color: red;
+    background-color: chocolate;
 }
 
 .box:nth-child(2) {
+    align-self: stretch;
     /* background-color: aquamarine; */
-    align-self: flex-end;
 }
+
+
+/** 
+**  HAY UN TRUCO CON LOS MARGENES Y FLEXBOX:
+**  
+**  Link de colaborador de Dorian con navs aplicando esto:
+**  
+**  https://github.com/rr69sport/flexbox-navs
+**  
+**  
+**  Aquí, menu responsive de Dorian:
+**  
+**  https://codepen.io/DorianDesings/pen/ExVyXEE
+**  
+** **/
